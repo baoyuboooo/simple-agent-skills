@@ -87,7 +87,7 @@ When code issues are found, fix them directly when the task allows editing.
 
 - Do not stop at suggestions if a safe scoped change can be applied.
 - Apply the smallest change that reduces complexity while still satisfying the current requirement.
-- Re-check behavior, contracts, abstraction, scope, and verification.
+- Re-check the updated code as a whole, not just the edited lines: behavior, contracts, abstraction, scope, placement, surrounding fit, and verification.
 - Repeat until the code satisfies this skill or a human decision is required.
 - Ask for human input only when behavior, contracts, data meaning, acceptance criteria, or verification requirements are unclear.
 - Do not present the change as safe when the intended behavior cannot be verified.

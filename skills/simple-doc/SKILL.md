@@ -84,7 +84,7 @@ When document issues are found, fix them directly when the task allows editing.
 
 - Do not stop at suggestions if the structure or wording can be safely fixed.
 - Apply the smallest edit that improves clarity without changing confirmed meaning.
-- Re-check outline, section responsibility, final-state wording, and open questions.
+- Re-check the updated document as a whole, not just the edited passage: outline, section responsibility, placement, surrounding fit, final-state wording, and open questions.
 - Repeat until the document satisfies this skill or a human decision is required.
 - Ask for human input only when facts, scope, templates, acceptance criteria, or confirmed meaning are unclear.
 - Do not present the document as final when unresolved decisions remain.

@@ -1,11 +1,13 @@
 # simple-agent-skills
 
-Two small reusable agent skills for keeping documents and code simple, scoped, and verifiable.
+Two reusable agent skills for keeping documents and code simple, scoped, and verifiable.
 
 ## Skills
 
-- `simple-doc`: review, draft, design, or rewrite documents into clearer, more final-state output without changing confirmed meaning
-- `simple-code`: review, write, simplify, or refactor code without unnecessary abstraction or avoidable complexity
+| Skill | Use for |
+| --- | --- |
+| `simple-doc` | Review, draft, design, or rewrite documents into clearer, more final-state output without changing confirmed meaning. |
+| `simple-code` | Review, write, simplify, or refactor code without unnecessary abstraction or avoidable complexity. |
 
 ## Core Ideas
 
@@ -21,12 +23,6 @@ Two small reusable agent skills for keeping documents and code simple, scoped, a
 copy skills/simple-doc/ to ~/.agents/skills/simple-doc/
 copy skills/simple-code/ to ~/.agents/skills/simple-code/
 ```
-
-## Notes
-
-- These are plain Markdown skills.
-- They are intentionally lightweight, not full project workflows or framework-specific rulebooks.
-- `simple-code` favors direct designs for new code and behavior-preserving changes for existing code.
 
 ## References
 
