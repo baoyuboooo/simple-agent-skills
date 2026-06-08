@@ -1,6 +1,6 @@
 ---
 name: simple-doc
-description: Use when reviewing, designing, or rewriting documents that need clearer structure, final-state wording when appropriate, and preservation of confirmed meaning.
+description: Use when reviewing, drafting, designing, or rewriting documents that need clearer structure, final-state wording when appropriate, and preservation of confirmed meaning.
 ---
 
 # Simple Doc
@@ -12,10 +12,10 @@ Make documents easier to understand, review, maintain, and execute. Do not merel
 Understand the document goal before changing structure or wording.
 
 - Identify the document type, audience, and intended use.
-- Identify whether the task is review, outline design, rewrite, or final cleanup.
+- Identify whether the task is review, draft creation, outline design, rewrite, or final cleanup.
 - Identify confirmed facts, rules, scope, constraints, templates, paths, and acceptance criteria.
 - Identify unclear or unconfirmed content before rewriting.
-- Do not rewrite unclear content as if it were confirmed.
+- Do not draft or rewrite unclear content as if it were confirmed.
 
 ## 2. Outline First
 
@@ -76,6 +76,8 @@ Edit only what improves the document for its real purpose.
 - Prefer small structural fixes before broad rewording.
 - Keep terminology consistent with the source material.
 
+When drafting a new document, create only the sections needed for the current goal. Do not invent extra process, policy, or rationale just to make the document feel complete.
+
 ## Self-Repair
 
 When document issues are found, fix them directly when the task allows editing.
@@ -105,6 +107,12 @@ For rewrite, return only relevant items:
 - revised content
 - open questions
 
+For drafting, return only relevant items:
+
+- proposed outline
+- drafted content
+- open questions
+
 When rewriting or making material changes, include a brief self-check that confirms meaning, scope, and confirmed facts were preserved.
 
 Do not include reasoning-process narration in the final document.
@@ -115,4 +123,5 @@ Do not include reasoning-process narration in the final document.
 - [ ] The document uses top-down structure.
 - [ ] Reasoning residue, repeated content, and vague wording are removed.
 - [ ] Confirmed facts, rules, scope, paths, templates, and acceptance criteria are preserved.
+- [ ] New content does not invent unsupported facts, rules, or scope.
 - [ ] Unclear or unconfirmed content is listed as open questions.

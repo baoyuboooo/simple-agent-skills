@@ -4,14 +4,14 @@ Two small reusable agent skills for keeping documents and code simple, scoped, a
 
 ## Skills
 
-- `simple-doc`: review, design, or rewrite documents into clearer, more final-state output without changing confirmed meaning
-- `simple-code`: review, simplify, or refactor existing code without changing behavior or adding unsupported abstractions
+- `simple-doc`: review, draft, design, or rewrite documents into clearer, more final-state output without changing confirmed meaning
+- `simple-code`: review, write, simplify, or refactor code without unnecessary abstraction or avoidable complexity
 
 ## Core Ideas
 
 - Think before changing: understand goal, scope, constraints, and confirmed facts or behavior first.
 - Simplicity over cleverness: prefer direct structure and direct code, not abstraction for its own sake.
-- Preserve what is already confirmed: do not silently change meaning, behavior, contracts, or scope.
+- Preserve confirmed meaning, intended behavior, and current scope where they already exist.
 - Keep changes surgical: fix the current problem without turning the task into a broader rewrite.
 - Verify the result: if meaning or behavior cannot be verified, state the gap explicitly.
 
@@ -26,7 +26,7 @@ copy skills/simple-code/ to ~/.agents/skills/simple-code/
 
 - These are plain Markdown skills.
 - They are intentionally lightweight, not full project workflows or framework-specific rulebooks.
-- `simple-code` is for existing code with behavior to preserve.
+- `simple-code` favors direct designs for new code and behavior-preserving changes for existing code.
 
 ## References
 
