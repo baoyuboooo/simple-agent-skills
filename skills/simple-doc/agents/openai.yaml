@@ -1,4 +1,4 @@
 interface:
   display_name: "Simple Doc"
-  short_description: "Clarify and finalize documents"
-  default_prompt: "Use $simple-doc to review or rewrite this document into a clearer structure without changing confirmed meaning."
+  short_description: "Clarify and structure documents"
+  default_prompt: "Use $simple-doc to review, draft, design, or rewrite this document into a clearer result without changing confirmed meaning, preserve required structure when present, and ask a human instead of guessing when reliable judgment is not possible."

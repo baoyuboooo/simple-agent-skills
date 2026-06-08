@@ -1,4 +1,4 @@
 interface:
   display_name: "Simple Code"
-  short_description: "Simplify existing code safely"
-  default_prompt: "Use $simple-code to review or simplify this existing code without changing behavior or adding unsupported abstractions."
+  short_description: "Write and simplify code safely"
+  default_prompt: "Use $simple-code to review, write, simplify, or refactor code while preserving required behavior and contracts, respecting existing structure unless the task calls for changing it, avoiding unsupported abstractions, and asking a human instead of guessing when reliable judgment is not possible."

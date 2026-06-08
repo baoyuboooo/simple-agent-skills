@@ -7,6 +7,10 @@ description: Use when reviewing, drafting, designing, or rewriting documents tha
 
 Make documents easier to understand, review, maintain, and execute. Do not merely make them shorter.
 
+Simplification must not override user-stated goals, scope, and constraints, or required templates, rules, or fixed structure.
+
+If reliable judgment is not possible, ask a human instead of guessing.
+
 ## 1. Think Before Editing
 
 Understand the document goal before changing structure or wording.
@@ -16,6 +20,7 @@ Understand the document goal before changing structure or wording.
 - Identify confirmed facts, rules, scope, constraints, templates, paths, and acceptance criteria.
 - Identify unclear or unconfirmed content before rewriting.
 - Do not draft or rewrite unclear content as if it were confirmed.
+- If the task has a required template or explicitly required structure, preserve that structure before simplifying anything else.
 
 ## 2. Outline First
 
@@ -28,6 +33,7 @@ Review the document structure before editing sentences.
 - Split sections that mix background, rules, workflow, checklist, or examples.
 - Keep entry documents lightweight; point to deeper documents instead of copying full details.
 - Do not expand the document scope to make it feel complete.
+- Do not delete required sections or rewrite fixed structure merely to make the document feel simpler.
 
 ## 3. Top-Down Structure
 
@@ -75,6 +81,7 @@ Edit only what improves the document for its real purpose.
 - Do not silently change confirmed meaning.
 - Prefer small structural fixes before broad rewording.
 - Keep terminology consistent with the source material.
+- If structure constraints are unclear, avoid irreversible structural changes until the requirement is clearer, but still make safe local improvements where useful.
 
 When drafting a new document, create only the sections needed for the current goal. Do not invent extra process, policy, or rationale just to make the document feel complete.
 
@@ -86,7 +93,7 @@ When document issues are found, fix them directly when the task allows editing.
 - Apply the smallest edit that improves clarity without changing confirmed meaning.
 - Re-check the updated document as a whole, not just the edited passage: outline, section responsibility, placement, surrounding fit, final-state wording, and open questions.
 - Repeat until the document satisfies this skill or a human decision is required.
-- Ask for human input only when facts, scope, templates, acceptance criteria, or confirmed meaning are unclear.
+- Ask for human input when facts, scope, templates, acceptance criteria, confirmed meaning, or the correct structural or content decision cannot be determined reliably from the available context.
 - Do not present the document as final when unresolved decisions remain.
 
 ## Output Contract
@@ -119,7 +126,7 @@ Do not include reasoning-process narration in the final document.
 
 ## Final Verification
 
-- [ ] The outline is simpler and section responsibilities are clearer.
+- [ ] The structure is clearer, or required structure was preserved correctly when present.
 - [ ] The document uses top-down structure.
 - [ ] Reasoning residue, repeated content, and vague wording are removed.
 - [ ] Confirmed facts, rules, scope, paths, templates, and acceptance criteria are preserved.

@@ -7,6 +7,10 @@ description: Use when reviewing, writing, simplifying, or refactoring code that 
 
 Make code easier to read, test, debug, and maintain. Do not make it clever, shorter, or more abstract for its own sake.
 
+Simplification must not override user-stated goals, scope, and constraints, or required behavior, contracts, rules, or established boundaries.
+
+If reliable judgment is not possible, ask a human instead of guessing.
+
 ## 1. Think Before Coding
 
 Understand the requirement, behavior, and boundaries before writing or changing code.
@@ -26,6 +30,7 @@ For existing code, behavior preservation is the first rule.
 - Do not change data meaning.
 - Do not change exception semantics.
 - Do not change persistence, transaction, concurrency, or external integration semantics unless explicitly requested.
+- Respect existing project structure and conventions by default, unless the task clearly calls for changing them.
 - If behavior cannot be verified, say so.
 
 For new code, preserve the intended requirement rather than inventing extra behavior or scope.
@@ -80,6 +85,7 @@ Keep the change scoped and tied to the current task.
 - Do not refactor unrelated modules.
 - Prefer small, reviewable changes.
 - Leave a note when a larger cleanup is useful but out of scope.
+- If behavior, contract, or structure constraints are unclear, default to the smallest safe local change.
 
 ## Self-Repair
 
@@ -89,7 +95,7 @@ When code issues are found, fix them directly when the task allows editing.
 - Apply the smallest change that reduces complexity while still satisfying the current requirement.
 - Re-check the updated code as a whole, not just the edited lines: behavior, contracts, abstraction, scope, placement, surrounding fit, and verification.
 - Repeat until the code satisfies this skill or a human decision is required.
-- Ask for human input only when behavior, contracts, data meaning, acceptance criteria, or verification requirements are unclear.
+- Ask for human input when behavior, contracts, data meaning, acceptance criteria, verification requirements, or the correct behavior, contract, or structural decision cannot be determined reliably from the available context.
 - Do not present the change as safe when the intended behavior cannot be verified.
 
 ## Output Contract
@@ -118,7 +124,7 @@ Verification must state how behavior or requirements were protected. If verifica
 
 - [ ] Existing behavior, public contracts, data meaning, and exception semantics are preserved where applicable.
 - [ ] New code satisfies the current requirement without unnecessary extra scope.
-- [ ] The implementation is simpler, more direct, and easier to test or debug.
+- [ ] The implementation is more direct, clearer, and easier to test or debug without breaking required behavior, contracts, or boundaries.
 - [ ] No unsupported abstraction, layer, pattern, dependency, or speculative extension point was added.
 - [ ] Changes are scoped to the current task.
 - [ ] Verification is stated, or the verification gap is explicit.

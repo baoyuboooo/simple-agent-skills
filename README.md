@@ -13,6 +13,8 @@ Two reusable agent skills for keeping documents and code simple, scoped, and ver
 
 - Think before changing: understand goal, scope, constraints, and confirmed facts or behavior first.
 - Simplicity over cleverness: prefer direct structure and direct code, not abstraction for its own sake.
+- Simplification must not override higher-priority requirements, constraints, or established boundaries.
+- When reliable judgment is not possible, ask a human instead of guessing.
 - Preserve confirmed meaning, intended behavior, and current scope where they already exist.
 - Keep changes surgical: fix the current problem without turning the task into a broader rewrite.
 - Verify the result: if meaning or behavior cannot be verified, state the gap explicitly.
