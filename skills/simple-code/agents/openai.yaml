@@ -1,0 +1,4 @@
+interface:
+  display_name: "Simple Code"
+  short_description: "Simplify existing code safely"
+  default_prompt: "Use $simple-code to review or simplify this existing code without changing behavior or adding unsupported abstractions."

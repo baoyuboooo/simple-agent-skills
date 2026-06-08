@@ -1,0 +1,4 @@
+interface:
+  display_name: "Simple Doc"
+  short_description: "Clarify and finalize documents"
+  default_prompt: "Use $simple-doc to review or rewrite this document into a clearer structure without changing confirmed meaning."
