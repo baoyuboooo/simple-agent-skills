@@ -1,6 +1,6 @@
 ---
 name: simple-code
-description: Use when reviewing, writing, simplifying, or refactoring code that should stay direct, readable, testable, and free of unsupported abstractions.
+description: Use when simplifying code that should become more direct, easier to follow, and lower in unnecessary complexity or abstraction without changing required behavior or contracts.
 ---
 
 # Simple Code
@@ -11,16 +11,64 @@ Simplification must not override user-stated goals, scope, and constraints, or r
 
 If reliable judgment is not possible, ask a human instead of guessing.
 
+## Trigger Boundary
+
+Auto-trigger this skill only when the request shows explicit simplification intent.
+
+Examples of valid intent:
+
+- simplify
+- reduce complexity
+- remove redundancy
+- reduce abstraction
+- make this more direct
+
+Do not auto-trigger this skill on broad requests such as:
+
+- optimize
+- adjust
+- review
+- rewrite
+- design
+- organize
+
+`optimize` only counts when paired with explicit simplification intent.
+
+Explicit direct invocation such as `$simple-code` remains valid even when the request does not include auto-trigger wording.
+
+Explicit invocation does not widen this skill into general implementation, feature work, or open-ended refactoring. The request must still be a simplification task.
+
+## Default Action
+
+Default to suggestions only.
+
+Do not directly modify the code unless the user explicitly asks for execution with wording such as:
+
+- auto-simplify
+- apply the suggestions
+- directly modify
+
+These are representative examples, not a closed whitelist.
+
+Explicit execution wording only enables modification within a simplification task. It does not convert this skill into a general coding or implementation skill.
+
+## Mixed-Intent Requests
+
+If a request mixes simplification with non-simplification work, keep this skill scoped to the simplification portion only.
+
+- If the request can be split cleanly, simplify the relevant part and leave the non-simplification part to another workflow or human decision.
+- If the request cannot be split safely, ask the human to separate the simplification task from the rest.
+- If explicit invocation is used for non-simplification work such as implementing a new feature, do not treat that as valid just because the skill name was invoked.
+
 ## 1. Think Before Coding
 
-Understand the requirement, behavior, and boundaries before writing or changing code.
+Understand the requirement, behavior, and boundaries before simplifying code.
 
 - Identify the current requirement and expected behavior.
 - Check nearby code, call sites, tests, and project conventions when available.
 - Identify public contracts, data meaning, exception semantics, and system boundaries before changing code.
-- Identify whether the task is review, implementation, simplification, refactoring, or final cleanup.
-- If the task is new code, identify the narrowest design that satisfies the current requirement.
-- Do not simplify or extend code whose behavior or responsibility is unclear.
+- Identify the simplification goal and what should become more direct or less complex.
+- Do not simplify code whose behavior or responsibility is unclear.
 
 ## 2. Preserve Behavior Where Behavior Exists
 
@@ -33,11 +81,9 @@ For existing code, behavior preservation is the first rule.
 - Respect existing project structure and conventions by default, unless the task clearly calls for changing them.
 - If behavior cannot be verified, say so.
 
-For new code, preserve the intended requirement rather than inventing extra behavior or scope.
-
 ## 3. Simplest Direct Design
 
-Prefer the simplest design that satisfies the current requirement.
+Prefer the simplest simplification path that makes the current code easier to follow without expanding scope.
 
 - Use direct control flow before patterns.
 - Use concrete code before generic frameworks.
@@ -47,7 +93,6 @@ Prefer the simplest design that satisfies the current requirement.
 - Use one clear method before multiple artificial layers.
 - Follow existing project conventions before this skill's preferences.
 - Do not optimize for hypothetical future requirements.
-- For new modules or architecture work, choose the smallest design that is clear now instead of building speculative extension points.
 
 Simple means easier to understand, test, debug, and change, not fewer lines.
 
@@ -87,14 +132,14 @@ Keep the change scoped and tied to the current task.
 - Leave a note when a larger cleanup is useful but out of scope.
 - If behavior, contract, or structure constraints are unclear, default to the smallest safe local change.
 
-## Self-Repair
+## Suggestions-First Rule
 
-When code issues are found, fix them directly when the task allows editing.
+When code issues are found, provide simplification suggestions by default rather than editing immediately.
 
-- Do not stop at suggestions if a safe scoped change can be applied.
-- Apply the smallest change that reduces complexity while still satisfying the current requirement.
+- Keep the suggestions scoped to the current requirement.
+- Apply edits only when the user explicitly requests modification.
+- When editing is explicitly requested, apply the smallest change that reduces complexity while still satisfying the current requirement.
 - Re-check the updated code as a whole, not just the edited lines: behavior, contracts, abstraction, scope, placement, surrounding fit, and verification.
-- Repeat until the code satisfies this skill or a human decision is required.
 - Ask for human input when behavior, contracts, data meaning, acceptance criteria, verification requirements, or the correct behavior, contract, or structural decision cannot be determined reliably from the available context.
 - Do not present the change as safe when the intended behavior cannot be verified.
 
@@ -102,28 +147,31 @@ When code issues are found, fix them directly when the task allows editing.
 
 Return only what the task needs.
 
-For review, return only relevant items:
+In suggestion mode, return only relevant items:
 
 - main verdict
-- complexity problems
+- 🟥 high-priority suggestions
+- 🟨 medium-priority suggestions
+- 🟩 low-priority suggestions
 - behavior risks
-- fixes applied
-- verification
+- verification gap
 
-For modification, return only relevant items:
+`main verdict` remains unadorned. The priority sections use emoji for scanability.
 
-- changes made
-- simplifications
-- behavior or requirement preservation
-- verification
-- remaining concerns
+In auto-modification mode, return only relevant items:
+
+- main verdict
+- 🛠 changes made
+- 🛡 preservation notes
+- 🟨 remaining concerns
+- 🧪 verification or 🧪 verification gap
 
 Verification must state how behavior or requirements were protected. If verification is not possible, state the gap clearly.
 
 ## Final Verification
 
 - [ ] Existing behavior, public contracts, data meaning, and exception semantics are preserved where applicable.
-- [ ] New code satisfies the current requirement without unnecessary extra scope.
+- [ ] The simplified code still satisfies the current requirement without unnecessary extra scope.
 - [ ] The implementation is more direct, clearer, and easier to test or debug without breaking required behavior, contracts, or boundaries.
 - [ ] No unsupported abstraction, layer, pattern, dependency, or speculative extension point was added.
 - [ ] Changes are scoped to the current task.

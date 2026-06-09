@@ -1,30 +1,79 @@
 ---
 name: simple-doc
-description: Use when reviewing, drafting, designing, or rewriting documents that need clearer structure, final-state wording when appropriate, and preservation of confirmed meaning.
+description: Use when simplifying or condensing documents that should become clearer, more direct, and easier to follow without changing confirmed meaning.
 ---
 
 # Simple Doc
 
-Make documents easier to understand, review, maintain, and execute. Do not merely make them shorter.
+Make documents easier to understand, maintain, and execute through simplification. Do not merely make them shorter.
 
 Simplification must not override user-stated goals, scope, and constraints, or required templates, rules, or fixed structure.
 
 If reliable judgment is not possible, ask a human instead of guessing.
+
+## Trigger Boundary
+
+Auto-trigger this skill only when the request shows explicit simplification intent.
+
+Examples of valid intent:
+
+- simplify
+- condense
+- reduce redundancy
+- make this more direct
+- make this shorter by removing unnecessary content
+
+Do not auto-trigger this skill on broad requests such as:
+
+- optimize
+- adjust
+- review
+- rewrite
+- design
+- organize
+
+`optimize` only counts when paired with explicit simplification intent.
+
+Explicit direct invocation such as `$simple-doc` remains valid even when the request does not include auto-trigger wording.
+
+Explicit invocation does not widen this skill into general drafting, document design, or general rewrite work. The request must still be a simplification task.
+
+## Default Action
+
+Default to suggestions only.
+
+Do not directly modify the document unless the user explicitly asks for execution with wording such as:
+
+- auto-simplify
+- apply the suggestions
+- directly modify
+
+These are representative examples, not a closed whitelist.
+
+Explicit execution wording only enables modification within a simplification task. It does not convert this skill into a general authoring or drafting skill.
+
+## Mixed-Intent Requests
+
+If a request mixes simplification with non-simplification work, keep this skill scoped to the simplification portion only.
+
+- If the request can be split cleanly, simplify the relevant part and leave the non-simplification part to another workflow or human decision.
+- If the request cannot be split safely, ask the human to separate the simplification task from the rest.
+- If explicit invocation is used for a non-simplification task such as drafting a new document from scratch, do not treat that as valid just because the skill name was invoked.
 
 ## 1. Think Before Editing
 
 Understand the document goal before changing structure or wording.
 
 - Identify the document type, audience, and intended use.
-- Identify whether the task is review, draft creation, outline design, rewrite, or final cleanup.
+- Identify the simplification goal and what should become clearer, shorter, or more direct.
 - Identify confirmed facts, rules, scope, constraints, templates, paths, and acceptance criteria.
-- Identify unclear or unconfirmed content before rewriting.
-- Do not draft or rewrite unclear content as if it were confirmed.
+- Identify unclear or unconfirmed content before changing wording or structure.
+- Do not rewrite unclear content as if it were confirmed.
 - If the task has a required template or explicitly required structure, preserve that structure before simplifying anything else.
 
 ## 2. Outline First
 
-Review the document structure before editing sentences.
+Inspect the document structure before editing sentences.
 
 - Check whether the outline has a clear top-down shape.
 - Keep heading levels shallow.
@@ -51,7 +100,7 @@ Formal documents should contain final decisions, not the path used to reach them
 
 For formal specs, runbooks, policies, and published guidance, prefer final-state content only.
 
-For working drafts or rewrite tasks where some inputs are still unresolved, improve structure and wording, but keep unresolved items explicit as open questions instead of inventing final answers.
+When some inputs are still unresolved, improve structure and wording only within confirmed boundaries, and keep unresolved items explicit as open questions instead of inventing final answers.
 
 Remove or rewrite:
 
@@ -83,16 +132,14 @@ Edit only what improves the document for its real purpose.
 - Keep terminology consistent with the source material.
 - If structure constraints are unclear, avoid irreversible structural changes until the requirement is clearer, but still make safe local improvements where useful.
 
-When drafting a new document, create only the sections needed for the current goal. Do not invent extra process, policy, or rationale just to make the document feel complete.
+## Suggestions-First Rule
 
-## Self-Repair
+When document issues are found, provide simplification suggestions by default rather than editing immediately.
 
-When document issues are found, fix them directly when the task allows editing.
-
-- Do not stop at suggestions if the structure or wording can be safely fixed.
-- Apply the smallest edit that improves clarity without changing confirmed meaning.
+- Keep the suggestions scoped to the current document goal.
+- Apply edits only when the user explicitly requests modification.
+- When editing is explicitly requested, apply the smallest change that improves clarity without changing confirmed meaning.
 - Re-check the updated document as a whole, not just the edited passage: outline, section responsibility, placement, surrounding fit, final-state wording, and open questions.
-- Repeat until the document satisfies this skill or a human decision is required.
 - Ask for human input when facts, scope, templates, acceptance criteria, confirmed meaning, or the correct structural or content decision cannot be determined reliably from the available context.
 - Do not present the document as final when unresolved decisions remain.
 
@@ -100,27 +147,26 @@ When document issues are found, fix them directly when the task allows editing.
 
 Return only what the task needs.
 
-For review, return only relevant items:
+In suggestion mode, return only relevant items:
 
 - main verdict
-- structural problems
-- content problems
-- fixes applied
+- 🟥 high-priority suggestions
+- 🟨 medium-priority suggestions
+- 🟩 low-priority suggestions
+- meaning-preservation notes
 - open questions
 
-For rewrite, return only relevant items:
+`main verdict` remains unadorned. The priority sections use emoji for scanability.
 
-- revised outline
-- revised content
-- open questions
+In auto-modification mode, return only relevant items:
 
-For drafting, return only relevant items:
+- main verdict
+- 🛠 changes made
+- 🛡 preservation notes
+- 🟨 remaining concerns
+- 🧪 verification or 🧪 verification gap
 
-- proposed outline
-- drafted content
-- open questions
-
-When rewriting or making material changes, include a brief self-check that confirms meaning, scope, and confirmed facts were preserved.
+When making material changes, include a brief self-check that confirms meaning, scope, and confirmed facts were preserved.
 
 Do not include reasoning-process narration in the final document.
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "Simple Doc"
-  short_description: "Clarify and structure documents"
-  default_prompt: "Use $simple-doc to review, draft, design, or rewrite this document into a clearer result without changing confirmed meaning, preserve required structure when present, and ask a human instead of guessing when reliable judgment is not possible."
+  short_description: "Simplify documents safely"
+  default_prompt: "Use $simple-doc only when the task is to simplify or condense a document without changing confirmed meaning. Explicit invocation does not widen the task into general drafting, design, or rewrite work. Default to suggestions first, preserve required structure when present, split mixed-intent requests when possible, and only modify directly when the user explicitly asks for execution."

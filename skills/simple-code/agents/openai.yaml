@@ -1,4 +1,4 @@
 interface:
   display_name: "Simple Code"
-  short_description: "Write and simplify code safely"
-  default_prompt: "Use $simple-code to review, write, simplify, or refactor code while preserving required behavior and contracts, respecting existing structure unless the task calls for changing it, avoiding unsupported abstractions, and asking a human instead of guessing when reliable judgment is not possible."
+  short_description: "Simplify code safely"
+  default_prompt: "Use $simple-code only when the task is to simplify code, reduce complexity, or remove unnecessary abstraction without changing required behavior or contracts. Explicit invocation does not widen the task into general implementation, feature work, or open-ended refactoring. Default to suggestions first, respect existing structure unless the task clearly calls for changing it, split mixed-intent requests when possible, and only modify directly when the user explicitly asks for execution."
