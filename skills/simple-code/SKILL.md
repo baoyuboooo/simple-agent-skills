@@ -149,24 +149,24 @@ Return only what the task needs.
 
 In suggestion mode, return only relevant items:
 
-- main verdict
-- 🟥 high-priority suggestions
-- 🟨 medium-priority suggestions
-- 🟩 low-priority suggestions
-- behavior risks
-- verification gap
-
-`main verdict` remains unadorned. The priority sections use emoji for scanability.
+- `## 📌 Main Verdict`
+- `## 🟥 High-Priority Suggestions`
+- `## 🟨 Medium-Priority Suggestions`
+- `## 🟩 Low-Priority Suggestions`
+- `## ⚠️ Behavior Risks`
+- `## ❓ Open Questions`
 
 In auto-modification mode, return only relevant items:
 
-- main verdict
-- 🛠 changes made
-- 🛡 preservation notes
-- 🟨 remaining concerns
-- 🧪 verification or 🧪 verification gap
+- `## 📌 Main Verdict`
+- `## 🛠 Changes Made`
+- `## 🛡 Preservation Notes`
+- `## 🟨 Remaining Concerns`
+- `## 🧪 Verification`
+- `## ❓ Open Questions`
 
-Verification must state how behavior or requirements were protected. If verification is not possible, state the gap clearly.
+Use simple ordered lists (`1. 2. 3.`) for items.
+`## 🧪 Verification`: checks performed, what they confirmed, and how required behavior was protected. If verification was not possible, state the gap under `## ❓ Open Questions`. `## ❓ Open Questions`: unresolved decisions, missing inputs, or unverified code paths still needing human confirmation.
 
 ## Final Verification
 
@@ -175,4 +175,4 @@ Verification must state how behavior or requirements were protected. If verifica
 - [ ] The implementation is more direct, clearer, and easier to test or debug without breaking required behavior, contracts, or boundaries.
 - [ ] No unsupported abstraction, layer, pattern, dependency, or speculative extension point was added.
 - [ ] Changes are scoped to the current task.
-- [ ] Verification is stated, or the verification gap is explicit.
+- [ ] Verification is stated, or unverified items are explicit.

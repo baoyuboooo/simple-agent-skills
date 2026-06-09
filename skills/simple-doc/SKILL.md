@@ -149,24 +149,24 @@ Return only what the task needs.
 
 In suggestion mode, return only relevant items:
 
-- main verdict
-- 🟥 high-priority suggestions
-- 🟨 medium-priority suggestions
-- 🟩 low-priority suggestions
-- meaning-preservation notes
-- open questions
-
-`main verdict` remains unadorned. The priority sections use emoji for scanability.
+- `## 📌 Main Verdict`
+- `## 🟥 High-Priority Suggestions`
+- `## 🟨 Medium-Priority Suggestions`
+- `## 🟩 Low-Priority Suggestions`
+- `## 🛡 Meaning-Preservation Notes`
+- `## ❓ Open Questions`
 
 In auto-modification mode, return only relevant items:
 
-- main verdict
-- 🛠 changes made
-- 🛡 preservation notes
-- 🟨 remaining concerns
-- 🧪 verification or 🧪 verification gap
+- `## 📌 Main Verdict`
+- `## 🛠 Changes Made`
+- `## 🛡 Preservation Notes`
+- `## 🟨 Remaining Concerns`
+- `## 🧪 Verification`
+- `## ❓ Open Questions`
 
-When making material changes, include a brief self-check that confirms meaning, scope, and confirmed facts were preserved.
+Use simple ordered lists (`1. 2. 3.`) for items.
+`## 🧪 Verification`: checks performed, what they confirmed, and whether meaning, scope, and confirmed facts were preserved. If verification was not possible, state the gap under `## ❓ Open Questions`. `## ❓ Open Questions`: unresolved decisions, missing inputs, or unverified content still needing human confirmation.
 
 Do not include reasoning-process narration in the final document.
 
@@ -177,4 +177,4 @@ Do not include reasoning-process narration in the final document.
 - [ ] Reasoning residue, repeated content, and vague wording are removed.
 - [ ] Confirmed facts, rules, scope, paths, templates, and acceptance criteria are preserved.
 - [ ] New content does not invent unsupported facts, rules, or scope.
-- [ ] Unclear or unconfirmed content is listed as open questions.
+- [ ] Unclear inputs and unconfirmed content are listed under `## ❓ Open Questions`.
