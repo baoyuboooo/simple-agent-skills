@@ -145,30 +145,36 @@ When document issues are found, provide simplification suggestions by default ra
 
 ## Output Contract
 
-Return only what the task needs.
+Return only the relevant sections.
 
-In suggestion mode, return only relevant items:
+For suggestion mode, use:
 
-- `## 📌 Main Verdict`
-- `## 🟥 High-Priority Suggestions`
-- `## 🟨 Medium-Priority Suggestions`
-- `## 🟩 Low-Priority Suggestions`
-- `## 🛡 Meaning-Preservation Notes`
-- `## ❓ Open Questions`
+* `## 📌 Main Verdict`
+* `## 🟥 High-Priority Suggestions`
+* `## 🟨 Medium-Priority Suggestions`
+* `## 🟩 Low-Priority Suggestions`
+* `## 🛡 Meaning-Preservation Notes`
+* `## ❓ Open Questions`
 
-In auto-modification mode, return only relevant items:
+For auto-modification mode, use:
 
-- `## 📌 Main Verdict`
-- `## 🛠 Changes Made`
-- `## 🛡 Preservation Notes`
-- `## 🟨 Remaining Concerns`
-- `## 🧪 Verification`
-- `## ❓ Open Questions`
+* `## 📌 Main Verdict`
+* `## 🛠 Changes Made`
+* `## 🛡 Preservation Notes`
+* `## 🟨 Remaining Concerns`
+* `## 🧪 Verification`
+* `## ❓ Open Questions`
 
-Use simple ordered lists (`1. 2. 3.`) for items.
-`## 🧪 Verification`: checks performed, what they confirmed, and whether meaning, scope, and confirmed facts were preserved. If verification was not possible, state the gap under `## ❓ Open Questions`. `## ❓ Open Questions`: unresolved decisions, missing inputs, or unverified content still needing human confirmation.
+Rules:
 
-Do not include reasoning-process narration in the final document.
+* Use simple ordered lists for output items: `1. 2. 3.`
+* Do not include empty sections.
+* Do not include reasoning-process narration.
+* Keep output scoped to simplification only.
+* Use `## 🧪 Verification` to state what was checked and whether meaning, scope, confirmed facts, required structure, and constraints were preserved.
+* Use `## ❓ Open Questions` for unresolved decisions, missing inputs, or unverified content that still needs human confirmation.
+
+
 
 ## Final Verification
 

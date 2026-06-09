@@ -145,28 +145,35 @@ When code issues are found, provide simplification suggestions by default rather
 
 ## Output Contract
 
-Return only what the task needs.
+Return only the relevant sections.
 
-In suggestion mode, return only relevant items:
+For suggestion mode, use:
 
-- `## 📌 Main Verdict`
-- `## 🟥 High-Priority Suggestions`
-- `## 🟨 Medium-Priority Suggestions`
-- `## 🟩 Low-Priority Suggestions`
-- `## ⚠️ Behavior Risks`
-- `## ❓ Open Questions`
+* `## 📌 Main Verdict`
+* `## 🟥 High-Priority Suggestions`
+* `## 🟨 Medium-Priority Suggestions`
+* `## 🟩 Low-Priority Suggestions`
+* `## ⚠️ Behavior Risks`
+* `## ❓ Open Questions`
 
-In auto-modification mode, return only relevant items:
+For auto-modification mode, use:
 
-- `## 📌 Main Verdict`
-- `## 🛠 Changes Made`
-- `## 🛡 Preservation Notes`
-- `## 🟨 Remaining Concerns`
-- `## 🧪 Verification`
-- `## ❓ Open Questions`
+* `## 📌 Main Verdict`
+* `## 🛠 Changes Made`
+* `## 🛡 Preservation Notes`
+* `## 🟨 Remaining Concerns`
+* `## 🧪 Verification`
+* `## ❓ Open Questions`
 
-Use simple ordered lists (`1. 2. 3.`) for items.
-`## 🧪 Verification`: checks performed, what they confirmed, and how required behavior was protected. If verification was not possible, state the gap under `## ❓ Open Questions`. `## ❓ Open Questions`: unresolved decisions, missing inputs, or unverified code paths still needing human confirmation.
+Rules:
+
+* Use simple ordered lists for output items: `1. 2. 3.`
+* Do not include empty sections.
+* Do not include reasoning-process narration.
+* Keep output scoped to code simplification only.
+* Use `## 🧪 Verification` to state what was checked, what was confirmed, and how required behavior, contracts, data meaning, and exception semantics were protected.
+* Use `## ❓ Open Questions` for unresolved decisions, missing inputs, or unverified code paths that still need human confirmation.
+
 
 ## Final Verification
 
