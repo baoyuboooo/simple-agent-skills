@@ -171,6 +171,7 @@ Rules:
 * Do not include empty sections.
 * Do not include reasoning-process narration.
 * Keep output scoped to simplification only.
+* Keep the response bounded to the completed task. Do not add generic follow-up questions.
 * Use `## 🧪 Verification` to state what was checked and whether meaning, scope, confirmed facts, required structure, and constraints were preserved.
 * Use `## ❓ Open Questions` for unresolved decisions, missing inputs, or unverified content that still needs human confirmation.
 

@@ -171,6 +171,7 @@ Rules:
 * Do not include empty sections.
 * Do not include reasoning-process narration.
 * Keep output scoped to code simplification only.
+* Keep the response bounded to the completed task. Do not add generic follow-up questions.
 * Use `## 🧪 Verification` to state what was checked, what was confirmed, and how required behavior, contracts, data meaning, and exception semantics were protected.
 * Use `## ❓ Open Questions` for unresolved decisions, missing inputs, or unverified code paths that still need human confirmation.
 
